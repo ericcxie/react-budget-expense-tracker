@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '../Context/GlobalState';
 
-export const Balance_component = () => {
+export const BalanceComponent = () => {
   const { transactions } = useContext(GlobalContext);
   
   const amounts = transactions.map(transaction => transaction.amount);
