@@ -8,6 +8,15 @@
   box-sizing: border-box;
 }
 
+#light {
+  background-color: #f7f7f7;
+}
+
+#dark {
+  background-color: #0902d7;
+}
+
+
 body {
   background-color: #f7f7f7;
   display: flex;
@@ -19,18 +28,23 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+#dark .form-control {
+  background-color: #ed003b;
+}
+
 .container {
   margin: 30px auto;
   width: 350px;
 }
 
-.gradient-text {
+.gradient-text-header {
   background: rgb(28,13,68);
   background: linear-gradient(90deg, rgba(28,13,68,1) 0%, rgba(55,95,142,1) 50%, rgba(65,72,154,1) 100%);
   background-clip: text;
   color: transparent;
   padding-left: 15px;
   padding-right: 15px;
+  font-weight: bold;
 }
 
 h1 {
@@ -74,11 +88,19 @@ h4 {
 }
 
 .money.plus {
-  color: #2ecc71;
+  background: rgb(0,196,1);
+  background: radial-gradient(circle, rgba(0,196,1,1) 0%, rgba(38,226,39,1) 100%);
+  background-clip: text;
+  color: transparent;
+  font-weight: bolder;
 }
 
 .money.minus {
+  background: rgb(255,3,3);
+  background: radial-gradient(circle, rgba(255,3,3,1) 0%, rgba(205,13,13,1) 100%);
+  background-clip: text;
   color: #c0392b;
+  font-weight: bolder;
 }
 
 label {
