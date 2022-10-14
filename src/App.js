@@ -1,23 +1,38 @@
 import './App.css';
 import { Header } from './Components/Header';
-import { Balance_component } from './Components/BalanceComponent';
-import { Expense_income } from './Components/ExpenseIncome';
-import { List_trans } from './Components/ListTrans';
-import { Trans_add } from './Components/AddTrans';
+import { BalanceComponent } from './Components/BalanceComponent';
+import { ExpenseIncome } from './Components/ExpenseIncome';
+import { ListTrans } from './Components/ListTrans';
+import { AddTrans } from './Components/AddTrans';
 
 import { GlobalProvider } from './Context/GlobalState';
+import { createContext, useState } from 'react';
+
+// Toggle between dark and light mode (incomplete)
+export const ThemeContext = createContext(null);
 
 function App() {
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    setTheme((current) => (current === "light" ? "dark" : "light"));
+  };
+
   return (
-    <GlobalProvider>
-      <Header/>
-      <div className='container'>
-        <Balance_component />
-        <Expense_income /> 
-        <List_trans />
-        <Trans_add />
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <div className="App" id={theme}>
+        <GlobalProvider>
+          <Header/>
+            <div className='container'>
+              <BalanceComponent />
+              <ExpenseIncome /> 
+              <ListTrans />
+              <AddTrans />
+            </div>
+        </GlobalProvider>
       </div>
-    </GlobalProvider>
+    </ThemeContext.Provider>
+    
   );
 }
 
