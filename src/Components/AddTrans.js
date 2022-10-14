@@ -2,7 +2,7 @@ import React, {useState, useContext} from 'react';
 import { GlobalContext } from '../Context/GlobalState';
 import '../App.css';
 
-export const Trans_add = () => {
+export const AddTrans = () => {
   const [text, setText] = useState('');
   const [amount, setAmount] = useState(0);
 
